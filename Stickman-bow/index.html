@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman Bow - Game Panah</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>🏹 Stickman Bow</h1>
+            <div class="score-board">
+                <span>Skor: <span id="score">0</span></span>
+                <span>Level: <span id="level">1</span></span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        
+        <div class="controls">
+            <button id="startBtn">Mulai Game</button>
+            <button id="restartBtn" style="display: none;">Main Lagi</button>
+            <button id="saveScoreBtn" style="display: none;">Simpan Skor</button>
+        </div>
+        
+        <div class="leaderboard">
+            <h2>🏆 Leaderboard</h2>
+            <div id="leaderboardList"></div>
+        </div>
+        
+        <div class="instructions">
+            <h3>Cara Bermain:</h3>
+            <p>🖱️ <strong>Klik & Seret</strong> untuk menarik busur</p>
+            <p>🎯 <strong>Lepaskan</strong> untuk menembak</p>
+            <p>⚡ Semakin jauh drag, semakin kuat tembakan</p>
+        </div>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
